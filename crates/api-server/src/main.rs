@@ -30,7 +30,7 @@ async fn init() {
         auth_service: AuthService { db: pool },
     });
 
-    let address_string = format!("{}:{}", &config.app_url.to_string(), config.app_port);
+    let address_string = format!("{}:{}", config.app_url, &config.app_port);
     let listener = tokio::net::TcpListener::bind(&address_string)
         .await
         .unwrap();
