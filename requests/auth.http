@@ -1,0 +1,35 @@
+@baseUrl = http://localhost:8000
+
+### Login
+# @name login
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "thangnd.deve@gmail.com",
+  "password": "123"
+}
+
+### Set access token jwt to token variable.
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzNTU2ZDdiOS01YzI1LTRhZmEtYmYyNC03MjE3ODBlM2E1ZDkiLCJleHAiOjE3NzUwNjEyMTF9.NxrIWr1y3oduTo8ZXg4bHOZ83LnL0W475uhui3oWl9w
+
+### Verify Token
+POST {{baseUrl}}/auth/verify-token
+Content-Type: application/json
+
+{
+  "token": "{{token}}"
+}
+
+
+### Register
+# @name Register
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+    "username": "thangnd.deve",
+    "email": "thangnd.deve@gmail.com",
+    "password": "123"
+}

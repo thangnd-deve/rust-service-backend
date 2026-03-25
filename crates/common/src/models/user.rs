@@ -8,9 +8,14 @@ pub struct User {
     pub id: Uuid,
     pub username: String,
     pub email: String,
+
     #[serde(skip_serializing)]
     pub password_hash: String,
+
+    #[serde(skip_serializing)]
     pub created_at: DateTime<Utc>,
+
+    #[serde(skip_serializing)]
     pub updated_at: DateTime<Utc>,
 }
 
